@@ -1,6 +1,6 @@
 {
   "name": "@vital-software/flux-standard-action",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A human-friendly standard for Flux action objects",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

@@ -37,7 +37,7 @@ export interface FluxStandardAction<
  * An extension of the Flux Standard action that represents an action containing an error as its payload.
  */
 export interface ErrorFluxStandardAction<
-  Type extends string,
+  Type extends string = string,
   CustomError extends Error = Error,
   Meta = undefined
 > extends FluxStandardAction<Type, CustomError, Meta> {
@@ -51,7 +51,7 @@ export interface ErrorFluxStandardAction<
  * Alias for FluxStandardAction.
  */
 export type FSA<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > = FluxStandardAction<Type, Payload, Meta>;
@@ -60,7 +60,7 @@ export type FSA<
  * Alias for ErrorFluxStandardAction.
  */
 export type ErrorFSA<
-  Type extends string,
+  Type extends string = string,
   CustomError extends Error = Error,
   Meta = undefined
 > = ErrorFluxStandardAction<Type, CustomError, Meta>;
@@ -69,18 +69,18 @@ export type ErrorFSA<
  * Returns `true` if `action` is FSA compliant.
  */
 export function isFSA<
+  Type extends string = string,
   Payload = undefined,
-  Meta = undefined,
-  Type extends string = string
+  Meta = undefined
 >(action: any): action is FluxStandardAction<Type, Payload, Meta>;
 
 /**
  * Returns `true` if `action` is FSA compliant error.
  */
 export function isError<
+  Type extends string = string,
   CustomError extends Error = Error,
-  Meta = undefined,
-  Type extends string = string
+  Meta = undefined
 >(action: any): action is ErrorFluxStandardAction<Type, CustomError, Meta>;
 
 /**
@@ -104,16 +104,16 @@ export interface FluxStandardActionWithPayload<
  * Alias for FSAWithPayload
  */
 export type FSAWithPayload<
+  Type extends string = string,
   Payload = undefined,
-  Meta = undefined,
-  Type extends string = string
+  Meta = undefined
 > = FluxStandardActionWithPayload<Type, Payload, Meta>;
 
 /**
  * A Flux Standard action with a required metadata property.
  */
 export interface FluxStandardActionWithMeta<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > extends FluxStandardAction<Type, Payload, Meta> {
@@ -127,7 +127,7 @@ export interface FluxStandardActionWithMeta<
  * Alias for FluxStandardActionWithMeta
  */
 export type FSAWithMeta<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > = FluxStandardActionWithMeta<Type, Payload, Meta>;
@@ -136,7 +136,7 @@ export type FSAWithMeta<
  * A Flux Standard action with required payload and metadata properties.
  */
 export type FluxStandardActionWithPayloadAndMeta<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > = FluxStandardActionWithPayload<Type, Payload, Meta> &
@@ -145,7 +145,7 @@ export type FluxStandardActionWithPayloadAndMeta<
  * Alias for FluxStandardActionWithPayloadAndMeta
  */
 export type FSAWithPayloadAndMeta<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > = FluxStandardActionWithPayloadAndMeta<Type, Payload, Meta>;
@@ -156,7 +156,7 @@ export type FSAWithPayloadAndMeta<
  * if not the `undefined` type.
  */
 export type FluxStandardActionAuto<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > = Payload extends undefined
@@ -170,7 +170,7 @@ export type FluxStandardActionAuto<
  * Alias for FluxStandardActionAuto
  */
 export type FSAAuto<
-  Type extends string,
+  Type extends string = string,
   Payload = undefined,
   Meta = undefined
 > = FluxStandardActionAuto<Type, Payload, Meta>;
