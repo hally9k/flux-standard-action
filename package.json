@@ -1,6 +1,5 @@
 {
-  "name": "@hally9k/flux-standard-action",
-  "private": true,
+  "name": "@vital-software/flux-standard-action",
   "version": "2.0.4",
   "description": "A human-friendly standard for Flux action objects",
   "main": "lib/index.js",
